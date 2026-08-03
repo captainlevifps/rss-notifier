@@ -42,12 +42,6 @@ feeds:
     label: "r/marvelrivals"
     color: "0xED1D24"
 
-  - name: marvel_rivals_leaks
-    url: "https://www.reddit.com/r/MarvelRivalsLeaks/new/.rss"
-    webhook: "$MARVEL_RIVALS_WEBHOOK"
-    mention: "<@&1533443249489051698>"
-    label: "r/MarvelRivalsLeaks"
-    color: "0xED1D24"
 
   # ---- Tech/AI: TechCrunch + The Verge + مصادر رسمية وتحريرية إضافية - أزرق ----
   - name: tech_ai_techcrunch
@@ -99,12 +93,7 @@ feeds:
     label: "Google AI Blog"
     color: "0x4285F4"
 
-  - name: tech_ai_hackernews
-    url: "https://hnrss.org/newest?q=AI+OR+LLM"
-    webhook: "$TECH_AI_WEBHOOK"
-    mention: "<@&1533443245735149640>"
-    label: "Hacker News"
-    color: "0xFF6600"
+  
 
   - name: jobs_egypt
     # ده Google Alerts RSS - شوف الشرح في README.md ازاي تجيبه

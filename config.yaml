@@ -16,21 +16,21 @@ feeds:
   - name: f1_news_autosport
     url: "https://www.autosport.com/rss/f1/news/"
     webhook: "$F1_WEBHOOK"
-    mention: ""
+    mention: "<@&1533443242430038066>"
     label: "Autosport"
     color: "0xE10600"
 
   - name: f1_news_motorsport
     url: "https://www.motorsport.com/rss/f1/news/"
     webhook: "$F1_WEBHOOK"
-    mention: ""
+    mention: "<@&1533443242430038066>"
     label: "Motorsport.com"
     color: "0xE10600"
 
   - name: f1_news_official
     url: "https://www.formula1.com/en/latest/all.xml"
     webhook: "$F1_WEBHOOK"
-    mention: ""
+    mention: "<@&1533443242430038066>"
     label: "Formula1.com (رسمي)"
     color: "0xE10600"
 
@@ -38,14 +38,14 @@ feeds:
   - name: marvel_rivals_news
     url: "https://www.reddit.com/r/marvelrivals/new/.rss"
     webhook: "$MARVEL_RIVALS_WEBHOOK"
-    mention: ""
+    mention: "<@&1533443249489051698>"
     label: "r/marvelrivals"
     color: "0xED1D24"
 
   - name: marvel_rivals_leaks
     url: "https://www.reddit.com/r/MarvelRivalsLeaks/new/.rss"
     webhook: "$MARVEL_RIVALS_WEBHOOK"
-    mention: ""
+    mention: "<@&1533443249489051698>"
     label: "r/MarvelRivalsLeaks"
     color: "0xED1D24"
 
@@ -53,56 +53,56 @@ feeds:
   - name: tech_ai_techcrunch
     url: "https://techcrunch.com/tag/artificial-intelligence/feed/"
     webhook: "$TECH_AI_WEBHOOK"
-    mention: ""
+    mention: "<@&1533443245735149640>"
     label: "TechCrunch"
     color: "0x0ABF53"
 
   - name: tech_ai_theverge
     url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
     webhook: "$TECH_AI_WEBHOOK"
-    mention: ""
+    mention: "<@&1533443245735149640>"
     label: "The Verge"
     color: "0x5200FF"
 
   - name: tech_ai_openai
     url: "https://openai.com/news/rss.xml"
     webhook: "$TECH_AI_WEBHOOK"
-    mention: ""
+    mention: "<@&1533443245735149640>"
     label: "OpenAI (رسمي)"
     color: "0x10A37F"
 
   - name: tech_ai_marktechpost
     url: "https://www.marktechpost.com/feed/"
     webhook: "$TECH_AI_WEBHOOK"
-    mention: ""
+    mention: "<@&1533443245735149640>"
     label: "MarkTechPost"
     color: "0x1E90FF"
 
   - name: tech_ai_huggingface
     url: "https://huggingface.co/blog/feed.xml"
     webhook: "$TECH_AI_WEBHOOK"
-    mention: ""
+    mention: "<@&1533443245735149640>"
     label: "Hugging Face"
     color: "0xFFD21E"
 
   - name: tech_ai_mit
     url: "https://www.technologyreview.com/topic/artificial-intelligence/feed/"
     webhook: "$TECH_AI_WEBHOOK"
-    mention: ""
+    mention: "<@&1533443245735149640>"
     label: "MIT Technology Review"
     color: "0xA31F34"
 
   - name: tech_ai_google
     url: "https://blog.google/technology/ai/rss/"
     webhook: "$TECH_AI_WEBHOOK"
-    mention: ""
+    mention: "<@&1533443245735149640>"
     label: "Google AI Blog"
     color: "0x4285F4"
 
   - name: tech_ai_hackernews
     url: "https://hnrss.org/newest?q=AI+OR+LLM"
     webhook: "$TECH_AI_WEBHOOK"
-    mention: ""
+    mention: "<@&1533443245735149640>"
     label: "Hacker News"
     color: "0xFF6600"
 
@@ -110,12 +110,12 @@ feeds:
     # ده Google Alerts RSS - شوف الشرح في README.md ازاي تجيبه
     url: "$JOBS_EGYPT_ALERT_URL"
     webhook: "$JOBS_EGYPT_WEBHOOK"
-    mention: "<@&ROLE_ID_HERE>"
+    mention: "<@&1533482772717637706>"
     label: "LinkedIn Jobs (Egypt) - AI/ML/Data"
     color: "0x0A66C2"
     # فلتر احتياطي: أي عنوان بيحتوي واحدة من الكلمات دي بس هيتبعت
     # (الفلتر الأساسي بيحصل فعليًا في الـ query بتاع Google Alerts نفسه)
     keywords: ["ai", "machine learning", "ml ", "deep learning", "computer vision",
                "nlp", "data scientist", "data analyst", "data analysis",
-               "automation", "agentic", "artificial intelligence"]
+               "automation", "agentic", "artificial intelligence,llm"]
 

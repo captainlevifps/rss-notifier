@@ -80,6 +80,27 @@ def clean_summary(entry, max_len=200):
     return (text[:max_len] + "…") if len(text) > max_len else text
 
 
+import re
+
+INVALID_XML_CHARS = re.compile(
+    r"[^\x09\x0A\x0D\x20-\uD7FF\uE000-\uFFFD\U00010000-\U0010FFFF]"
+)
+
+
+def fetch_and_clean_feed(url):
+    """
+    بعض المواقع بترجّع RSS فيه حروف مش صالحة في XML (control characters، إلخ)
+    فبنجيب المحتوى إحنا بنفسنا بـ requests (مع User-Agent عادي عشان بعض
+    السيرفرات بترفض طلبات من غير UA)، ننضفه، وبعدين نديه لـ feedparser
+    بدل ما نسيبه هو يطلب الرابط ويقع لو فيه توكن غلط.
+    """
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; rss-notifier/1.0)"}
+    resp = requests.get(url, headers=headers, timeout=15)
+    resp.raise_for_status()
+    cleaned = INVALID_XML_CHARS.sub("", resp.text)
+    return feedparser.parse(cleaned)
+
+
 def post_to_discord(webhook_url, payload):
     resp = requests.post(webhook_url, json=payload, timeout=15)
     if resp.status_code >= 300:
@@ -101,7 +122,12 @@ def process_feed(feed_cfg, seen):
         return
 
     print(f"[{name}] checking {url}")
-    parsed = feedparser.parse(url)
+    try:
+        parsed = fetch_and_clean_feed(url)
+    except Exception as e:
+        print(f"  [!] couldn't fetch feed manually ({e}), falling back")
+        parsed = feedparser.parse(url)
+
     if parsed.bozo and not parsed.entries:
         print(f"  [!] couldn't parse feed: {parsed.bozo_exception}")
         return

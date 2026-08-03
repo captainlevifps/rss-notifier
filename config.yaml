@@ -1,18 +1,4 @@
-# =========================================================================
-#  عدّل هنا بس. كل feed = قناة واحدة على Discord.
-#
-#  webhook: حط اسم الـ GitHub Secret مسبوق بـ $  (متكتبش اللينك هنا صريح لو الريبو public)
-#  mention: اختياري. سيبها فاضية "" لو مش عايز تاج حد.
-#           رول:    "<@&ROLE_ID>"
-#           شخص:    "<@USER_ID>"
-#           الكل:   "@everyone"
-#  label:   اسم المصدر اللي هيظهر فوق الخبر جوه الـ embed (مثلاً "Autosport")
-#  color:   لون شريط الـ embed، هيكس بين قوسين "0xRRGGBB"
-#  keywords: اختياري، لو حطيت كلمات، هيبعت بس الأخبار اللي عنوانها فيه واحدة منهم
-# =========================================================================
-
 feeds:
-  # ---- F1: 3 مصادر على نفس القناة (نفس الـ webhook) - أحمر F1 ----
   - name: f1_news_autosport
     url: "https://www.autosport.com/rss/f1/news/"
     webhook: "$F1_WEBHOOK"
@@ -34,16 +20,6 @@ feeds:
     label: "Formula1.com (رسمي)"
     color: "0xE10600"
 
-  # ---- Marvel Rivals: subreddit رئيسي + subreddit الـ leaks - بنفسجي مارفل ----
-  - name: marvel_rivals_news
-    url: "https://www.reddit.com/r/marvelrivals/new/.rss"
-    webhook: "$MARVEL_RIVALS_WEBHOOK"
-    mention: "<@&1533443249489051698>"
-    label: "r/marvelrivals"
-    color: "0xED1D24"
-
-
-  # ---- Tech/AI: TechCrunch + The Verge + مصادر رسمية وتحريرية إضافية - أزرق ----
   - name: tech_ai_techcrunch
     url: "https://techcrunch.com/tag/artificial-intelligence/feed/"
     webhook: "$TECH_AI_WEBHOOK"
@@ -93,18 +69,12 @@ feeds:
     label: "Google AI Blog"
     color: "0x4285F4"
 
-  
-
   - name: jobs_egypt
-    # ده Google Alerts RSS - شوف الشرح في README.md ازاي تجيبه
     url: "$JOBS_EGYPT_ALERT_URL"
     webhook: "$JOBS_EGYPT_WEBHOOK"
     mention: "<@&1533482772717637706>"
     label: "LinkedIn Jobs (Egypt) - AI/ML/Data"
     color: "0x0A66C2"
-    # فلتر احتياطي: أي عنوان بيحتوي واحدة من الكلمات دي بس هيتبعت
-    # (الفلتر الأساسي بيحصل فعليًا في الـ query بتاع Google Alerts نفسه)
     keywords: ["ai", "machine learning", "ml ", "deep learning", "computer vision",
                "nlp", "data scientist", "data analyst", "data analysis",
-               "automation", "agentic", "artificial intelligence,llm"]
-
+               "automation", "agentic", "artificial intelligence", "llm"]

@@ -111,7 +111,11 @@ feeds:
     url: "$JOBS_EGYPT_ALERT_URL"
     webhook: "$JOBS_EGYPT_WEBHOOK"
     mention: "<@&ROLE_ID_HERE>"
-    label: "LinkedIn Jobs (Egypt)"
+    label: "LinkedIn Jobs (Egypt) - AI/ML/Data"
     color: "0x0A66C2"
-    keywords: ["internship", "entry level", "junior", "egypt", "مصر"]
+    # فلتر احتياطي: أي عنوان بيحتوي واحدة من الكلمات دي بس هيتبعت
+    # (الفلتر الأساسي بيحصل فعليًا في الـ query بتاع Google Alerts نفسه)
+    keywords: ["ai", "machine learning", "ml ", "deep learning", "computer vision",
+               "nlp", "data scientist", "data analyst", "data analysis",
+               "automation", "agentic", "artificial intelligence"]
 
